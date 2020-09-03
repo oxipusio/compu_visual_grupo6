@@ -233,3 +233,10 @@
 	<_mingw.h>
 	<stddef.h>
 
+1599152199 source:c:\users\termi\onedrive\desktop\ingenieria de software\ciclo 5\computacion visual\laboratorios\compu_visual_grupo6\laboratorio2\grupo6_taller2_ejer5\main.cpp
+	<iostream>
+	<math.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+

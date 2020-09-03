@@ -61,8 +61,8 @@ void display(void)
     glPointSize(4); // Fije el grosor de pixel = 2
 
     elipseAhora();
-    aPuntoMedioCirculo(25,0,0);
-    aPuntoMedioCirculo2(25,5,10);
+    //aPuntoMedioCirculo(25,0,0);
+    //aPuntoMedioCirculo2(25,0,0);
     glPopMatrix(); // recupera el estado del matriz
     glFlush();
 }
@@ -121,49 +121,45 @@ void aPuntoMedioCirculo(int radio,int posx,int posy)
 }
 
 
-
+/*
 void aPuntoMedioCirculo2(int radio,int posx,int posy)
 {
+    radio = 25;
     int x=0;
     int y=radio,d=1-radio;
+    int dx=posx;
+    int dy=posy;
     glTranslatef(0, 0, 0); // Coloca el centro en otro lado
-
+    dx=10;
+    dy=10;
     glBegin(GL_POINTS);
-    glVertex2f(y+posy,x+posx);//Primer Octante
-    glVertex2f(x+posx,y+posy);//Segundo Octante
-    glVertex2f(-x+posx,y+posy);//Tercer octante
-    glVertex2f(-y+posy,x+posx);//Cuarto octante
-    glVertex2f(-y+posy,-x+posx);//Quinto octante
-    glVertex2f(-x+posx,-y+posy);//Sexto octante
-    glVertex2f(x+posx,-y+posy);//Septimo octante
-    glVertex2f(y+posy,-x+posx);//Septimo octante
     while(x<y)
     {
         if(d<0)
         {
-            d+=2*x+3;
+            d+=2*x+3+dx;
         }
         else
         {
-            d+=2*(x-y)+5;
-            y--;
+            d+=2*(x-y)+5+dx;
+            y=y-1;
         }
         x++;
 
-        glVertex2f(y+posy,x+posx);//Primer Octante
-        glVertex2f(x+posx,y+posy);//Segundo Octante
-        glVertex2f(-x-posx,y+posy);//Tercer octante
-        glVertex2f(-y+posy,x+posx);//Cuarto octante
-        glVertex2f(-y+posy,-x-posx);//Quinto octante
-        glVertex2f(-x-posx,-y-posy);//Sexto octante
-        glVertex2f(x+posx,-y-posy);//Septimo octante
-        glVertex2f(y+posy,-x-posx);//Septimo octante
+        glVertex2f(y,x);//Primer Octante
+        glVertex2f(x,y);//Segundo Octante
+        glVertex2f(-x,y);//Tercer octante
+        glVertex2f(-y,x);//Cuarto octante
+        glVertex2f(-y,-x);//Quinto octante
+        glVertex2f(-x,-y);//Sexto octante
+        glVertex2f(x,-y);//Septimo octante
+        glVertex2f(y,-x);//Septimo octante
 
     }
 
     glEnd();
 }
-
+*/
 // opcional
 void ingresoDatos(void)
 {
